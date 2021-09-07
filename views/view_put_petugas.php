@@ -7,8 +7,8 @@ include '../controller/controller_petugas.php';
 
 //membuat objek dari class petugas
 $petugas = new controller_petugas();
-$GetPetugas = $petugas->GetData_Where($_GET['id_petugas']);
-
+$id_petugas = base64_decode($_GET['id_petugas']);
+$GetPetugas = $petugas->GetData_Where($id_petugas);
  ?>
 
 
@@ -21,7 +21,7 @@ $GetPetugas = $petugas->GetData_Where($_GET['id_petugas']);
   ?>
 
   <form action="../config/routes.php?function=put_petugas" method="POST">
-  	<input type="text" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
+  	<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
   	<table border="1">
   		<input type="hidden" name="id_petugas" value="<?php echo $Get['id_petugas']; ?>">
   		<tr>
@@ -47,9 +47,9 @@ $GetPetugas = $petugas->GetData_Where($_GET['id_petugas']);
 
   					<option value="<?php echo $Get['level']; ?>">
   						<?php 
-  							if ($Get['level']=="administrator") {
+  							if ($Get['level']=="1") {
   								echo "ADMINISTRATOR";
-  							}elseif ($Get['level']=="petugas") {
+  							}elseif ($Get['level']=="2") {
   								echo "PETUGAS";
   							}
   						 ?>
@@ -65,6 +65,7 @@ $GetPetugas = $petugas->GetData_Where($_GET['id_petugas']);
 
   		<tr>
       <td><a href="http://localhost/belajarmvc/views/view_petugas.php">back</a></td>  
+      <td colspan="2" align="right"><input type="submit" name="proses" value="create"></td>
       </tr>
   	</table>
   </form>

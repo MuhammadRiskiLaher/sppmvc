@@ -7,7 +7,8 @@ include '../controller/controller_siswa.php';
 
 //membuat objek dari class siswa
 $siswa = new controller_siswa();
-$GetSiswa = $siswa->GetData_Where($_GET['nisn']);
+$nisn = base64_decode($_GET['nisn']);
+$GetSiswa = $siswa->GetData_Where($nisn);
 
  ?>
 
@@ -21,7 +22,7 @@ $GetSiswa = $siswa->GetData_Where($_GET['nisn']);
   ?>
 
   <form action="../config/routes.php?function=put_siswa" method="POST">
-    <input type="text" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
+    <input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
     <table border="1">
       <input type="hidden" name="nisn" value="<?php echo $Get['nisn']; ?>">
       <tr>

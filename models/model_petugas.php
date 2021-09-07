@@ -75,12 +75,12 @@ class Model_petugas{
 		{
 			//perintah PUT data
 			mysqli_query($this->con,"update petugas set
-				'".$id_petugas."',
-				'".$username."',
-				'".$password."',
-				'".$nama_petugas."',
-				'".$level."'
-				where nisn='".$nisn."'
+				id_petugas='".$id_petugas."',
+				username='".$username."',
+				password='".$password."',
+				nama_petugas='".$nama_petugas."',
+				level='".$level."'
+				where id_petugas='".$id_petugas."'
 				");
 		}
 

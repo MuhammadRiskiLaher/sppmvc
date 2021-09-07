@@ -5,7 +5,7 @@
  ?>
 
  <form action="../config/routes.php?function=create_petugas" method="POST">
- 	<input type="text" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
+ 	<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
 
  	<table border="1">
  		<tr>

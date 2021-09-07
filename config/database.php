@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //koneksi ke database
 class database
@@ -8,9 +8,9 @@ class database
 	var $host = "localhost";
 	var $uname = "root";
 	var $pass = "";
-	var $db = "sppsekolah";
+	var $db = "spptugas";
 	var $connection;
-	
+
 	//method koneksi ke database
 	function connect()
 	{
@@ -18,5 +18,3 @@ class database
 		return $this->connection;
 	}
 }
-
- ?>

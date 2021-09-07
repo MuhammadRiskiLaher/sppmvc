@@ -7,7 +7,8 @@ include '../controller/controller_spp.php';
 
 //membuat objek dari class spp
 $spp = new controller_spp();
-$GetSpp = $spp->GetData_Where($_GET['id_spp']);
+$id_spp = base64_decode($_GET['id_spp']);
+$GetSpp = $spp->GetData_Where($id_spp);
 
  ?>
 
@@ -21,7 +22,7 @@ $GetSpp = $spp->GetData_Where($_GET['id_spp']);
   ?>
 
   <form action="../config/routes.php?function=put_spp" method="POST">
-  	<input type="text" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
+  	<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
   	<table border="1">
   		<input type="hidden" name="id_spp" value="<?php echo $Get['id_spp']; ?>">
   		<tr>
@@ -36,7 +37,10 @@ $GetSpp = $spp->GetData_Where($_GET['id_spp']);
 
 
   		<tr>
-      <td><a href="http://localhost/belajarmvc/views/view_spp.php">back</a></td>  
+      <td><a href="http://localhost/belajarmvc/views/view_spp.php">back</a></td> 
+      
+
+        <td colspan="2" align="right"><input type="submit" name="proses" value="create"></td>
       </tr>
   	</table>
   </form>

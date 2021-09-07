@@ -5,7 +5,7 @@
  ?>
 
  <form action="../config/routes.php?function=create_siswa" method="POST">
- 	<input type="text" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
+ 	<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
 
  	<table border="1">
  		<tr>
@@ -32,7 +32,7 @@
 
 
   					<option value= "1">RPL</option>
-  					<option value= "3">TKJ</option>
+  					<option value= "2">TKJ</option>
   				</select>
   			</td>
   		</tr>
