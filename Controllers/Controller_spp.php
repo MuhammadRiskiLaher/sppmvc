@@ -1,7 +1,7 @@
 <?php 
 
 //class CRUD spp
-class controller_spp{
+class Controller_spp{
 
 	//property
 	var $db;
@@ -22,7 +22,7 @@ class controller_spp{
 		function __construct()
 		{
 			// membuat objek dari class module pegawai
-			include '../models/model_spp.php';
+			include '../Models/Model_spp.php';
 			$this->Mspp = new model_spp();
 		}
 

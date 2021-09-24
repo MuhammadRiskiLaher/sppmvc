@@ -1,7 +1,7 @@
 <?php 
 
 //class CRUD siswa
-class controller_siswa{
+class Controller_siswa{
 
 	//property
 	var $db;
@@ -21,8 +21,8 @@ class controller_siswa{
 		function __construct()
 		{
 			// membuat objek dari class module pegawai
-			include '../models/model_siswa.php';
-			$this->Msiswa = new model_siswa();
+			include '../Models/Model_siswa.php';
+			$this->Msiswa = new Model_siswa();
 		}
 
 

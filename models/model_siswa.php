@@ -1,4 +1,4 @@
- <?php 
+<?php 
 
 //class model siswa (CRUD siswa)
 class Model_siswa{
@@ -24,8 +24,8 @@ class Model_siswa{
 		function __construct()
 		{
 			//membuat objek dari kelas database
-			include '../config/database.php';
-			$this->db = new database();
+			include '../Config/Database.php';
+			$this->db = new Database();
 			$this->con = $this->db->connect();
 		}
 

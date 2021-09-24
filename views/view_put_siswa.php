@@ -1,12 +1,12 @@
 <?php 
 
   //memanggil fungsi dari CSRF
-include('../config/csrf.php');
+include('../Config/Csrf.php');
 
-include '../controller/controller_siswa.php';
+include '../Controllers/Controller_siswa.php';
 
 //membuat objek dari class siswa
-$siswa = new controller_siswa();
+$siswa = new Controller_siswa();
 $nisn = base64_decode($_GET['nisn']);
 $GetSiswa = $siswa->GetData_Where($nisn);
 
@@ -21,7 +21,7 @@ $GetSiswa = $siswa->GetData_Where($nisn);
 
   ?>
 
-  <form action="../config/routes.php?function=put_siswa" method="POST">
+  <form action="../Config/Routes.php?function=put_siswa" method="POST">
     <input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
     <table border="1">
       <input type="hidden" name="nisn" value="<?php echo $Get['nisn']; ?>">

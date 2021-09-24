@@ -20,7 +20,7 @@ class Model_spp{
 		function __construct()
 		{
 			//membuat objek dari spp database
-			include '../config/database.php';
+			include '../Config/Database.php';
 			$this->db = new database();
 			$this->con = $this->db->connect();
 		}

@@ -1,7 +1,7 @@
 <?php 
 
 //class CRUD pembayaran
-class controller_pembayaran{
+class Controller_pembayaran{
 
 	//property
 	var $db;
@@ -27,7 +27,7 @@ class controller_pembayaran{
 		function __construct()
 		{
 			// membuat objek dari class module pegawai
-			include '../models/model_pembayaran.php';
+			include '../Models/Model_pembayaran.php';
 			$this->Mpembayaran = new model_pembayaran();
 		}
 

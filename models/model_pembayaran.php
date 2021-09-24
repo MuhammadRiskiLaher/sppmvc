@@ -1,4 +1,4 @@
- <?php 
+<?php 
 
 //class model pembayaran (CRUD pembayaran)
 class Model_pembayaran{
@@ -25,7 +25,7 @@ class Model_pembayaran{
 		function __construct()
 		{
 			//membuat objek dari kelas database
-			include '../config/database.php';
+			include '../Config/Database.php';
 			$this->db = new database();
 			$this->con = $this->db->connect();
 		}

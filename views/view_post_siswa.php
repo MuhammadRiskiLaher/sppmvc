@@ -1,10 +1,10 @@
 <?php 
 	//memanggil fungsi CSRF
-	include('../config/csrf.php');
+	include('../Config/Csrf.php');
 
  ?>
 
- <form action="../config/routes.php?function=create_siswa" method="POST">
+ <form action="../Config/Routes.php?function=create_siswa" method="POST">
  	<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
 
  	<table border="1">
